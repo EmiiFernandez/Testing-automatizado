@@ -7,27 +7,27 @@
 
 ● Implementar un proyecto de automatización con Selenium y JAVA
 
-  ○ Iniciar un proyecto de automatización.
+  * Iniciar un proyecto de automatización.
   
-  ○ Implementar Page Object como patrón de diseño en un lenguaje orientado a objetos.
+  * Implementar Page Object como patrón de diseño en un lenguaje orientado a objetos.
   
-  ○ Armado y ejecución de suites dentro de un proyecto.
+  * Armado y ejecución de suites dentro de un proyecto.
   
-  ○ Generación de reportes.
+  * Generación de reportes.
   
 ● Implementar un proyecto de automatización con RestAssured y JAVA.
 
 ● Definición de procesos de calidad en los distintos momentos de desarrollo tales como:
 
-  ○ Plan de pruebas.
+  * Plan de pruebas.
   
-  ○ Plan para la liberación de nuevas versiones.
+  * Plan para la liberación de nuevas versiones.
   
-  ○ Mantenimiento de la prueba - Procesos de revisión.
+  * Mantenimiento de la prueba - Procesos de revisión.
   
-  ○ Almacenamiento de pruebas
+  * Almacenamiento de pruebas
   
-  ○ Métricas y Reportes.
+  * Métricas y Reportes.
   
 ● Principios para implementar testing en dispositivos móviles.
 
@@ -39,10 +39,6 @@
 -- Buenas prácticas de Automatización y concepto de Framework
 
   ● Patrones de diseño para automatización de la prueba
-  
-    ○ Page Object Model
-
-    ○ Screenplay
     
   ● Frameworks para automatización de la prueba
   
@@ -65,7 +61,11 @@
 -- Integración continua y Testing.
 
 -- Jenkins, pipelines y jobs.
+
 -- Implementación de Procesos de Calidad
+
 -- Master Test Plan y Release Test Plan
+
 -- Métricas y Reportes
+
 -- Testing en Dispositivos Móviles
