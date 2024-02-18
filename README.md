@@ -1,71 +1,32 @@
-# Testing-automatizado
+# Testing Automatizado
 
 ## Objetivos
-● Conocer e implementar procesos de calidad dentro de un proceso de desarrollo de software.
-
-● Reconocer casos de pruebas automatizables.
-
-● Implementar un proyecto de automatización con Selenium y JAVA
-
-  * Iniciar un proyecto de automatización.
-  
-  * Implementar Page Object como patrón de diseño en un lenguaje orientado a objetos.
-  
-  * Armado y ejecución de suites dentro de un proyecto.
-  
-  * Generación de reportes.
-  
-● Implementar un proyecto de automatización con RestAssured y JAVA.
-
-● Definición de procesos de calidad en los distintos momentos de desarrollo tales como:
-
-  * Plan de pruebas.
-  
-  * Plan para la liberación de nuevas versiones.
-  
-  * Mantenimiento de la prueba - Procesos de revisión.
-  
-  * Almacenamiento de pruebas
-  
-  * Métricas y Reportes.
-  
-● Principios para implementar testing en dispositivos móviles.
+- Conocer e implementar procesos de calidad dentro del desarrollo de software.
+- Reconocer casos de pruebas automatizables.
+- Implementar proyectos de automatización con Selenium y Java, así como con RestAssured.
+- Definir procesos de calidad en diferentes etapas de desarrollo, como:
+  - Planificación de pruebas.
+  - Liberación de nuevas versiones.
+  - Mantenimiento de pruebas y procesos de revisión.
+  - Almacenamiento de pruebas.
+  - Métricas y reportes.
+- Aplicar principios para implementar pruebas en dispositivos móviles.
 
 ## Contenidos
--- Revisión Conceptos Principales de Testing
-
--- Implementación de pruebas funcionales con Selenium Webdriver.
-
--- Buenas prácticas de Automatización y concepto de Framework
-
-  ● Patrones de diseño para automatización de la prueba
-    
-  ● Frameworks para automatización de la prueba
-  
-  ● Partes de un frameworks para automatización de pruebas
-  
--- JAVA para Selenium
-
-  ● POO y Java para implementar automatización de pruebas con Selenium Webdriver
-  
-  ● Implementación de un Framework de Automatización de pruebas con Selenium WebDriver y Java
-  
-  ● Before y After test
-  
-  ● Armado de suites, playlist y conjuntos de test dentro de nuestro proyecto
-  
-  ● Generación de reportes desde nuestro proyecto de automatización
-  
--- Automatizando Pruebas a Servicios REST con RestAssured I
-
--- Integración continua y Testing.
-
--- Jenkins, pipelines y jobs.
-
--- Implementación de Procesos de Calidad
-
--- Master Test Plan y Release Test Plan
-
--- Métricas y Reportes
-
--- Testing en Dispositivos Móviles
+- Revisión de conceptos principales de testing.
+- Implementación de pruebas funcionales con Selenium WebDriver.
+- Buenas prácticas de automatización y concepto de framework, incluyendo:
+  - Patrones de diseño para automatización de pruebas.
+  - Frameworks para automatización de pruebas.
+  - Partes de un framework para automatización de pruebas.
+- Uso de Java para Selenium, abordando:
+  - Programación orientada a objetos y Java para implementar automatización de pruebas con Selenium WebDriver.
+  - Implementación de un framework de automatización de pruebas con Selenium WebDriver y Java.
+  - Configuración de acciones antes y después de las pruebas.
+  - Armado de suites, playlists y conjuntos de pruebas dentro del proyecto.
+  - Generación de reportes desde el proyecto de automatización.
+- Automatización de pruebas a servicios REST con RestAssured.
+- Integración continua y testing, utilizando herramientas como Jenkins, pipelines y jobs.
+- Implementación de procesos de calidad, incluyendo el Master Test Plan y Release Test Plan.
+- Métricas y reportes.
+- Testing en dispositivos móviles.
