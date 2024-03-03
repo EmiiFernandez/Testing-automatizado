@@ -1,3 +1,4 @@
+import net.bytebuddy.pool.TypePool;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -52,6 +53,19 @@ public class SearchTest {
 
         // Seleccionar la primera opción del listado con un teclado
         searchBox.sendKeys(Keys.ARROW_DOWN);
+        String searchBoxText = searchBox.getAttribute("value");
         searchBox.sendKeys(Keys.ENTER);
+        searchBox.sendKeys(Keys.ENTER);
+
+        WebElement searchOk = driver.findElement(By.className("abf093bdfe"));
+
+        if (searchOk != null) {
+            System.out.println("Búsqueda exitosa: " + searchBoxText);
+        } else {
+            System.out.println("Hubo un error al realizar la búsqueda");
+        }
     }
+
+    //WebElement searchButton = driver.findElement(By.xpath("//*[@id=\"bodyconstraint-inner\"]/div[2]/div/div[1]/div/form/div[1]/div[4]/button"))
+    //searchButton.click();
 }
