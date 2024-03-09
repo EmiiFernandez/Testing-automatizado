@@ -2,72 +2,89 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
+
 //Superclase
 public class BasePage {
     //Inicializar WebDriver para interactuar con el navegador
-    public WebDriver driver;
+    protected WebDriver driver;
+
+    // Atributo para realizar esperas explícitas en la página
+    protected WebDriverWait wait;
 
     // Constructor de la clase BasePage que inicializa el WebDriver
     // Recibe un objeto WebDriver y lo asigna al atributo driver de la clase.
-    public BasePage(WebDriver driver) {
+    protected BasePage(WebDriver driver) {
         this.driver = driver;
+        //Configurar la espera del wait
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    // Método setup() que configura el WebDriver para utilizar
-    // ChromeDriver y maximiza la ventana
+    /// Método para configurar el WebDriver y maximizar la ventana
     public void setup() {
-        // Se inicializa el WebDriver con ChromeDriver
-       // driver = new ChromeDriver();
-        // Se maximiza la ventana del navegador
+    // Se inicializa el WebDriver con ChromeDriver
+    // driver = new ChromeDriver();
+    // Se maximiza la ventana del navegador
         driver.manage().window().maximize();
     }
 
-    // Método url(String url) que navega a una URL específica
+    // Método para navegar a una URL específica
     public void url(String url) throws InterruptedException {
-        // Se carga la URL proporcionada en el navegador
+    // Se carga la URL proporcionada en el navegador
         driver.get(url);
+    // Se espera a que la página cargue
         Thread.sleep(1000);
-
     }
 
-    // Cerrar navegador
-    public void close() {
+    // Método para cerrar el navegador web
+    public void close() throws InterruptedException {
+        Thread.sleep(2000);
         driver.quit();
     }
 
-    // Método para encontrar un elemento en la página mediante un
-    // localizador (By)
-    public WebElement findElement(By locator) {
-        // Utiliza el método findElement() del WebDriver para localizar el
-        // elemento en la página
+    // Método para encontrar un elemento en la página mediante un localizador
+    protected WebElement findElement(By locator) {
+    // Se utiliza el método findElement() del WebDriver para localizar el
+    // elemento en la página
         return driver.findElement(locator);
     }
 
     // Método para ingresar texto en un elemento de la página web
-    public void sendText(String inputText, By locator) {
-        // Se localiza el elemento en la página y se limpia el texto existente en el elemento
+    protected void sendText(String inputText, By locator) {
+    // Se localiza el elemento en la página y se limpia el texto
+    // existente en el elemento
         this.findElement(locator).clear();
-        // Se ingresa el nuevo texto en el elemento
+    // Se ingresa el nuevo texto en el elemento
         this.findElement(locator).sendKeys(inputText);
+    // Se espera a que el texto sea ingresado
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
     // Método para enviar una tecla específica a un elemento de la página web
-    public void sendKey(CharSequence key, By locator) {
-        // Se localiza el elemento en la página y se envía la tecla especificada al elemento
+    protected void sendKey(CharSequence key, By locator) {
+    // Se espera a que el elemento sea visible
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    // Se localiza el elemento en la página y se envía la tecla especificada al elemento
         this.findElement(locator).sendKeys(key);
     }
 
     // Método para hacer clic en un elemento de la página web
-    public void click(By locator) {
-        // Se localiza el elemento en la página y se hace clic en él
+    public void click(By locator) throws InterruptedException {
+    // Se espera a que el elemento sea clickeable
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
         this.findElement(locator).click();
     }
 
     // Método para obtener el texto de un elemento de la página web
-    public String getText(By locator) {
-        // Se localiza el elemento en la página y se obtiene su texto
-        return  this.findElement(locator).getText();
+    public String getText(By locator)  {
+    // Se espera a que el elemento sea visible
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    // Se localiza el elemento en la página y se obtiene su texto
+        return this.findElement(locator).getText();
     }
 
     // Método para cerrar ventanas emergentes si están presentes
@@ -79,7 +96,7 @@ public class BasePage {
                 closeButton.click();
                 break;
             } catch (NoSuchElementException e) {
-                // Popup window is not present, exit the loop
+    // Popup window is not present, exit the loop
                 Thread.sleep(1000);
                 attempts++;
             }

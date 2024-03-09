@@ -1,5 +1,4 @@
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SearchPage extends BasePage {
     public SearchPage(WebDriver driver) {
@@ -23,10 +22,11 @@ public class SearchPage extends BasePage {
         return this.findElement(searchBox).getAttribute("value");
     }
 
-    public void resultadoBusqueda() {
+    public void resultadoBusqueda()  {
         String searchBoxText = searchBoxText(); // Llama al método para obtener el texto
         if (searchBoxText != null && !searchBoxText.isEmpty() && searchBox != null) {
             System.out.println("Búsqueda exitosa: " + searchBoxText);
+            System.out.println("RESULTADO DE LA BUSQUEDA: " + this.getText(searchOk));
         } else {
             System.out.println("Hubo un error al realizar la búsqueda");
         }
