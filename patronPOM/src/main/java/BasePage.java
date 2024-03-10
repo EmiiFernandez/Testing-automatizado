@@ -21,6 +21,9 @@ public class BasePage {
     protected BasePage(WebDriver driver) {
         this.driver = driver;
         //Configurar la espera del wait
+        //Si quisiera modificarlo debo agregar al constructor y pasarlo
+        //en las demás clases. De esta forma podría personalizar el tiempo
+        //en caso de ser necesario
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
@@ -55,13 +58,13 @@ public class BasePage {
 
     // Método para ingresar texto en un elemento de la página web
     protected void sendText(String inputText, By locator) {
-    // Se localiza el elemento en la página y se limpia el texto
+        // Se espera a que el texto sea ingresado
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        // Se localiza el elemento en la página y se limpia el texto
     // existente en el elemento
         this.findElement(locator).clear();
     // Se ingresa el nuevo texto en el elemento
         this.findElement(locator).sendKeys(inputText);
-    // Se espera a que el texto sea ingresado
-        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
     // Método para enviar una tecla específica a un elemento de la página web

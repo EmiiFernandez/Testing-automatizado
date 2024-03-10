@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,6 +31,8 @@ public class SearchTestPOM {
 
     // Prueba para verificar una búsqueda exitosa en Uruguay
     @Test
+    @Tag("BUSQUEDA") //Creación de suite
+    @Tag("SMOKE") //Un test puede agregarse en distintos suites
     public void busquedaExitosa_Uruguay() throws InterruptedException {
         // Escribe "Punta del Este" en el campo de búsqueda
         searchPage.escribirBusqueda("Punta del Este");
@@ -40,6 +43,8 @@ public class SearchTestPOM {
     }
 
     @Test
+    @Tag("BUSQUEDA")
+    @Tag("REGRESSION")
     public void busquedaExitosa_Grecia() throws InterruptedException {
 
         searchPage.escribirBusqueda("Paros");
