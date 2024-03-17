@@ -105,4 +105,9 @@ public class BasePage {
             }
         }
     }
+
+    // Método para cerrar una ventana emergente (asume la existencia de un método closePopupWindow en otro lugar)
+    public void closePopup(By closePopupButton) throws InterruptedException {
+        closePopupWindow(closePopupButton, 4);
+    }
 }

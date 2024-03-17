@@ -77,8 +77,12 @@ public class LoginPage extends BasePage { // La clase LoginPage hereda de una cl
     }
 
     // Método para cerrar una ventana emergente (asume la existencia de un método closePopupWindow en otro lugar)
+   // public void closePopup() throws InterruptedException {
+    //    closePopupWindow(closePopupButton, 4);
+    //}
+
     public void closePopup() throws InterruptedException {
-        closePopupWindow(closePopupButton, 4);
+        this.closePopup(closePopupButton);
     }
 
     // Método para hacer clic y mantener presionado el elemento "no soy un robot"
