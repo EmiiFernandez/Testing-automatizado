@@ -84,6 +84,6 @@ public class POSTTest {
 
         // Imprimo el código de estado y el tiempo de respuesta
         System.out.println("Status code: " + response.statusCode());
-        System.out.println("Tiempo de ejecución: " + response.time());
+        System.out.println("Tiempo de ejecución: " + response.time() + " milisegundos");
     }
 }
