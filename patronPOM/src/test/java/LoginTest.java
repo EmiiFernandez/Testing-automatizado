@@ -57,11 +57,26 @@ public class LoginTest {
         test.log(Status.PASS, "Se valida que la búsqueda haya sido correcta"); // Agrega un log de tipo "pass" al test
     }
 
-    /*@AfterEach
+
+
+    @Test
+    public void LoginDatosVacios() throws InterruptedException {
+        ExtentTest test = extent.createTest("Intentar loguarse sin agregar ningún dato");
+        test.log(Status.INFO, "Comienza test de login con datos vacíos");
+        loginPage.escribirUsername("");
+        //loginPage.escribirPassword("");
+        test.log(Status.PASS, "No se agregan datos al login");
+        loginPage.usernameInvalido();
+        test.log(Status.PASS, "Se valida el mensaje de campos obligarios");
+
+
+    }
+
+    @AfterEach
     public void close() throws InterruptedException {
         loginPage = new LoginPage(driver);
         loginPage.close();
-    }*/
+    }
 
     @AfterAll
     public static void saveReport() {
