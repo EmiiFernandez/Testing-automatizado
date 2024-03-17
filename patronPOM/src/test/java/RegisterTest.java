@@ -2,10 +2,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import reportes.ExtentFactory;
@@ -51,4 +48,16 @@ public class RegisterTest {
         Assertions.assertEquals(registerPage.registerOk(), "Buscar");
         test.log(Status.PASS, "Se inicio sesión exitosamente"); // Agrega otro log de paso al test
     }
+
+    @AfterEach // Se ejecuta después de cada prueba
+    public void close() throws InterruptedException {
+        registerPage = new RegisterPage(driver); // Vuelve a inicializar la página de login
+        registerPage.close(); // Cierra la página
+    }
+
+    @AfterAll // Se ejecuta después de todos los tests
+    public static void saveReport() {
+        extent.flush(); // Guarda el reporte generado
+    }
 }
+
