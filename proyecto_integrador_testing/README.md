@@ -5,12 +5,7 @@
 * **Sistema bajo prueba:** _Para Bank_ - https://parabank.parasoft.com/parabank/index.htm
 
 **Título del caso de prueba:** 
-*     Proceso de registro, 
-*     apertura de una nueva cuenta, 
-*     visión general de la cuenta, 
-*     transferencia de fondos, 
-*     actividad de la cuenta, 
-*     para todas las etapas de las pruebas frontales
+* Proceso de registro, apertura de una nueva cuenta, visión general de la cuenta, transferencia de fondos, actividad de la cuenta, para todas las etapas de las pruebas frontales
 
 **Pruebas Front-end:**
 
