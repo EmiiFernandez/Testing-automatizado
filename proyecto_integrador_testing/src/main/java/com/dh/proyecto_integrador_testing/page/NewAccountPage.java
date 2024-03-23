@@ -9,9 +9,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class NewAccountPage extends BasePage {
 
 
-    private By usuarioId = By.xpath("//input[@name='username']");
-    private By password = By.xpath("//input[@name='password']");
-    private By botonLogin = By.xpath("//input[@value='Log In']");
+    private By usuarioId = By.xpath("//*[@id=\"loginPanel\"]/form/div[1]/input");
+    private By password = By.xpath("//*[@id=\"loginPanel\"]/form/div[2]/input");
+    private By botonLogin = By.xpath("//*[@id=\"loginPanel\"]/form/div[3]/input");
     private By openNewAccount = By.linkText("Open New Account");
     private By tipoCuentaId = By.id("type");
     private By botonSubmit = By.xpath("//INPUT[@type='submit']");

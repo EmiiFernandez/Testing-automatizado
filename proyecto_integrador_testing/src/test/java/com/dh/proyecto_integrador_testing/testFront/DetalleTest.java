@@ -16,7 +16,7 @@ import java.time.Duration;
 public class DetalleTest {
     private WebDriver driver;
     private WebDriverWait wait;
-    static ExtentSparkReporter info = new ExtentSparkReporter("target/detalle-reports.html");
+    static ExtentSparkReporter info = new ExtentSparkReporter("target/new-account-reports.html");
     static ExtentReports extent;
 
     @BeforeAll
