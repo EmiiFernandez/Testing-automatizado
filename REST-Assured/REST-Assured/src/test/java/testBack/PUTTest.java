@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.testng.Assert;
 
 import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.equalTo;
 import static io.restassured.RestAssured.given;
 
 public class PUTTest {
