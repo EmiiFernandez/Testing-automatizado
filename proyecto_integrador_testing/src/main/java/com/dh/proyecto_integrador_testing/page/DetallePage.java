@@ -14,7 +14,7 @@ public class DetallePage extends BasePage {
     private By mensajeBalance = By.xpath("//TD[@colspan='3'][text()='*Balance includes deposits that may be subject to holds\n" +
             "        ']");
     //*Balance includes deposits that may be subject to holds
-    private By accountNumber = By.linkText("15564");
+    private By accountNumber = By.linkText("13566");
     private By tituloDetalleCuenta = By.xpath("//H1[@class='title'][text()='Account Details']");
     private By actividadPeriodoId = By.id("month");
     private By tipoId = By.id("transactionType");
