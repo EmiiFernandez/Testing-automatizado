@@ -23,7 +23,7 @@ public class RegisterTest {
     static ExtentReports extent;
 
     @BeforeAll
-    public static void crearReporte() {
+    public static void createReport() {
         extent = ExtentFactory.getInstance();
         extent.attachReporter(info);
     }
